@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 """
-usage: genre-id.py [-h] [-v V] [-vv VV] query [query ...]
+usage: genre-id.py [-h] [-v] [-vv] query [query ...]
 
 ID Genre from Beatport
 
@@ -10,9 +10,8 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  -v V        Print first song name and genre
-  -vv VV      Print all song names, artists, remixers, and genres
-
+  -v          Print first song name and genre
+  -vv         Print all song names, artists, remixers, and genres
 
 examples:
 
@@ -63,10 +62,10 @@ from bs4 import BeautifulSoup
 from tabulate import tabulate
 
 parser = argparse.ArgumentParser(description='ID Genre from Beatport')
-parser.add_argument('query', metavar='query', nargs='+',
+parser.add_argument('query', nargs='+',
                     help='Song Artist + Title query')
-parser.add_argument('-v', help='Print first song name and genre')
-parser.add_argument('-vv', help='Print all song names, artists, remixers, and genres')
+parser.add_argument('-v', action='store_true', help='Print first song name and genre')
+parser.add_argument('-vv', action='store_true', help='Print all song names, artists, remixers, and genres')
 args = parser.parse_args()
 
 url = 'https://www.beatport.com/search'

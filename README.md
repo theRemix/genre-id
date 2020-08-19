@@ -9,8 +9,8 @@
 ## Usage
 
 
-```sh
-usage: genre-id.py [-h] [-v verbose] [-vv table] query [query ...]
+```python
+usage: genre-id.py [-h] [-v] [-vv] query [query ...]
 
 ID Genre from Beatport
 
@@ -19,8 +19,8 @@ positional arguments:
 
 optional arguments:
   -h, --help  show this help message and exit
-  -v verbose  Print first song name and genre
-  -vv table   Print all song names, artists, remixers, and genres
+  -v          Print first song name and genre
+  -vv         Print all song names, artists, remixers, and genres
 ```
 
 
